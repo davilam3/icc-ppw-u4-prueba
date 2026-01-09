@@ -31,14 +31,12 @@ public class Vehicle {
     }
 
 
-      public Vehicle( Double price, Integer stock) {
+    public Vehicle(Double price, Integer stock) {
 
-        if (price == null || price.compareTo(DoubleZERO) < 0)
+        if (price == null || price.compareTo(Double.valueOf(0.0)) < 0)
             throw new BadRequestException("Precio inválido");
         if (stock == null || stock < 0)
             throw new BadRequestException("Stock inválido");
-        this.brand = brand;
-        this.model = model;
         this.price = price;
         this.stock = stock;
     }
